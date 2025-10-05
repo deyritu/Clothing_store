@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manage Your Account</title>
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+  <link rel="stylesheet" href="account.css">
+  <script src="account.js" defer></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">ShopEase</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Contact Us</a></li>
+      <li>
+        <a href="#" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+          <span class="cart-count">0</span>
+        </a>
+      </li>
+      <li class="account-dropdown">
+        <a href="#" class="account-icon" onclick="toggleDropdown(event)">
+          <i class="fas fa-user-circle"></i>
+        </a>
+        <ul class="dropdown-menu hidden">
+          <li><a href="Index.html">Login/Sign Up</a></li>
+          <li><a href="#" onclick="showOrders()">Orders</a></li>
+          <li><a href="#" onclick="showWishlist()">Wishlist</a></li>
+          <li><a href="account.html">Manage Account</a></li>
+        </ul>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <header>
+      <span class="back-arrow">&#8592;</span>
+      <h2>Manage Your Account</h2>
+    </header>
+
+    <!-- Popup Message -->
+<div id="popup" class="popup hidden">
+  <p>Details saved successfully!</p>
+</div>
+    <form class="account-form">
+ <div class="input-group">
+        <span class="country-code">+91</span>
+        <input type="text" placeholder="Mobile Number">
+      </div>
+      <label>Full Name</label>
+      <input type="text">
+
+      <label>Email</label>
+      <input type="email" placeholder="">
+
+      <h4>Alternate mobile number details</h4>
+
+      <div class="input-group">
+        <span class="country-code">+91</span>
+        <input type="text" placeholder="Mobile Number">
+      </div>
+
+      <input type="text" placeholder="Hint name">
+
+      <button type="submit" class="save-btn">SAVE DETAILS</button>
+
+      <button type="button" class="delete-btn">DELETE ACCOUNT</button>
+    </form>
+  </div>
+</body>
+</html>
