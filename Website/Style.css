@@ -255,10 +255,71 @@ a:hover {
   text-decoration: none;
   transition: background 0.3s, color 0.3s;
 }
-
 .dropdown-menu li a:hover {
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
+}
+/* Tablets */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 25px;
+  }
+
+  .nav-links {
+    gap: 15px;
+  }
+
+  .auth-container {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .side-image {
+    width: 100%;
+  }
+
+  .auth-form {
+    width: 100%;
+  }
+}
+
+/* Mobile Phones */
+@media (max-width: 600px) {
+  .navbar {
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+
+  .nav-links {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .auth-container {
+    width: 95%;
+    flex-direction: column;
+    margin-top: 70px;
+  }
+
+  .side-image {
+    display: none;
+  }
+
+  .auth-form {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .form input, .form button {
+    font-size: 14px;
+  }
+
+  .toast {
+    width: 90%;
+    left: 5%;
+    right: 5%;
+  }
 }
 
 .dropdown-menu:not(.hidden) {

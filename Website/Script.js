@@ -25,7 +25,7 @@ function signup() {
   }
 
   let users = JSON.parse(localStorage.getItem("users") || "[]");
-  if (users.some(u => u.email === email)) {
+  if (users.some((u) => u.email === email)) {
     showToast("User with this email already exists");
     return;
   }
@@ -50,7 +50,7 @@ function login() {
   }
 
   let users = JSON.parse(localStorage.getItem("users") || "[]");
-  let user = users.find(u => u.email === email && u.pass === pass);
+  let user = users.find((u) => u.email === email && u.pass === pass);
 
   if (user) {
     showToast(`✅ Login Successful! Redirecting...`);
@@ -69,7 +69,7 @@ function toggleDropdown(event) {
   dropdown.classList.toggle("hidden");
 }
 
-document.addEventListener("click", function(event) {
+document.addEventListener("click", function (event) {
   const dropdown = document.querySelector(".dropdown-menu");
   const accountIcon = document.querySelector(".account-icon");
   if (!accountIcon.contains(event.target) && !dropdown.contains(event.target)) {
@@ -88,20 +88,24 @@ function manageProfile() {
   let userEmail = prompt("Enter your email to manage your profile:");
   if (!userEmail) return;
 
-  const userIndex = users.findIndex(user => user.email === userEmail);
+  const userIndex = users.findIndex((user) => user.email === userEmail);
   if (userIndex === -1) {
     showToast("Profile not found.");
     return;
   }
 
-  const action = prompt("Type 'delete' to remove your profile or 'view' to see details:").toLowerCase();
+  const action = prompt(
+    "Type 'delete' to remove your profile or 'view' to see details:"
+  ).toLowerCase();
   if (action === "delete") {
     users.splice(userIndex, 1);
     localStorage.setItem("users", JSON.stringify(users));
     showToast("Profile deleted successfully!");
   } else if (action === "view") {
     const user = users[userIndex];
-    showToast(`Name: ${user.name}, Email: ${user.email}, Mobile: ${user.mobile}`);
+    showToast(
+      `Name: ${user.name}, Email: ${user.email}, Mobile: ${user.mobile}`
+    );
   } else {
     showToast("Invalid action.");
   }
@@ -150,7 +154,7 @@ function forgotPassword() {
   if (!email) return;
 
   let users = JSON.parse(localStorage.getItem("users") || "[]");
-  let user = users.find(u => u.email === email.trim());
+  let user = users.find((u) => u.email === email.trim());
 
   if (!user) {
     showToast("Email not found.");
@@ -182,8 +186,10 @@ function toggleSubDropdown(event) {
 }
 
 // Close dropdowns if clicking outside
-document.addEventListener("click", function(event) {
-  const mainDropdown = document.querySelector(".account-dropdown .dropdown-menu");
+document.addEventListener("click", function (event) {
+  const mainDropdown = document.querySelector(
+    ".account-dropdown .dropdown-menu"
+  );
   const subDropdown = document.querySelector(".sub-dropdown-menu");
 
   if (mainDropdown && !event.target.closest(".account-dropdown")) {

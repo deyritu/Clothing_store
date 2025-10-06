@@ -5,7 +5,7 @@
   font-family: 'Poppins', sans-serif;
 }
 
-body {
+body{
   background: #fff;
   color: #333;
   display: flex;
@@ -269,3 +269,45 @@ h4 {
 .popup.hidden {
   display: none;
 }
+/* Hide menu toggle by default (desktop) */
+.menu-toggle {
+  display: none;
+}
+
+/* Mobile responsive */
+@media (max-width: 768px) {
+  /* Show toggle icon on mobile */
+  .menu-toggle {
+    display: block;
+    font-size: 26px;
+    color: white;
+    cursor: pointer;
+  }
+
+  /* Hide nav links initially on mobile */
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
+    position: absolute;
+    top: 65px;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    border-radius: 0 0 15px 15px;
+    padding: 15px 0;
+    gap: 15px;
+  }
+
+  /* Show nav links when active */
+  .nav-links.active {
+    display: flex;
+  }
+
+  /* Adjust container spacing on mobile */
+  .container {
+    width: 90%;
+    margin-top: 100px;
+  }
+}
+  
